@@ -1,0 +1,172 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+body {
+  background-color: #35383a;
+}
+
+h1 {
+  color: transparent;
+  position: absolute;
+  left: -4000px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+}
+
+section {
+  height: 100vh;
+  border: 2px solid black;
+  padding-left: 15%;
+}
+
+.welcome {
+  background-image: url(/assets/pale-blue-dot.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*Header and Nav styles start*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  color: white;
+}
+
+header .logo {
+  height: 100px;
+  margin-left: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+header .logo img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+header .main-nav {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 3rem;
+}
+
+header ul li {
+  list-style: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 2rem 1rem;
+  padding: 0.8rem 0.6rem;
+  text-transform: uppercase;
+  -webkit-transition: border 100ms ease-in;
+  transition: border 100ms ease-in;
+}
+
+header ul li:hover {
+  border: 1px solid white;
+  -webkit-transition: border 100ms ease-in;
+  transition: border 100ms ease-in;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.1rem;
+}
+
+/*Welcome Section*/
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+}
+
+.welcome-wrapper {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50vw;
+}
+
+.welcome-wrapper p {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.welcome-wrapper .start-btn {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+
+.socials {
+  list-style: none;
+  position: absolute;
+  right: 1rem;
+  top: calc(50% - 150px);
+}
+
+.socials li {
+  margin: 3rem;
+}
+
+.socials li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 0.8rem;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.scroll-prompt {
+  position: absolute;
+  bottom: 0;
+  right: 6rem;
+}
+
+.scroll-prompt:before {
+  content: "";
+}
+/*# sourceMappingURL=style.css.map */
