@@ -5,10 +5,14 @@
 }
 
 $base-color: #35383a;
+$deco-color: #ff007b;
+$accent-color: #d25e5e;
+$letter-spacing: 0.2rem;
+$nav-padding: 1rem 0.8rem;
 
 html {
   font-family: 'Roboto', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 body {
@@ -23,14 +27,25 @@ h1 {
 
 h2 {
   text-transform: uppercase;
-  font-size: 1.3rem;
-  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  letter-spacing: $letter-spacing;
 }
 
 section {
   height: 100vh;
-  border: 2px solid black;
   padding-left: 15%;
+  display: flex;
+}
+
+.btn {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  padding: 1rem 3rem;
+  letter-spacing: $letter-spacing;
+  transition: all 100ms ease-in-out;
 }
 
 .welcome {
@@ -70,7 +85,7 @@ header {
     display: flex;
     height: 100%;
     justify-content: flex-end;
-    margin-right: 3rem;
+    margin-right: 5%;
 
 
     li {
@@ -78,8 +93,8 @@ header {
       height: fit-content;
       border: 1px solid transparent;
       border-radius: 4px;
-      margin: 2rem 1rem;
-      padding: 0.8rem 0.6rem;
+      margin: 2rem 0;
+      padding: $nav-padding;
       text-transform: uppercase;
       transition: border 100ms ease-in;
 
@@ -91,7 +106,7 @@ header {
       a {
         text-decoration: none;
         color: white;
-        letter-spacing: 0.1rem;
+        letter-spacing: $letter-spacing;
       }
     }
 
@@ -101,7 +116,6 @@ header {
 /*Welcome Section*/
 
 .welcome {
-  display: flex;
   color: white;
 }
 
@@ -109,33 +123,32 @@ header {
   align-self: center;
   width: 50vw;
 
-
   p {
-    font-size: 4rem;
-    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
   }
 
   .start-btn {
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-size: 1.2rem;
     background-color: transparent;
-    border: 1px solid white;
-    border-radius: 3px;
-    color: white;
-    padding: 0.5rem 2rem;
+
+    &:hover {
+      background-color: white;
+      color: $base-color;
+      transition: all 100ms ease-in-out;
+    }
   }
 }
 
 .socials {
   list-style: none;
   position: absolute;
-  right: 1rem;
-  top: calc(50% - 150px);
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
 
   li {
-  margin: 3rem;
-
+  margin: 1.5rem 0;
 
     a {
       text-decoration: none;
@@ -150,10 +163,173 @@ header {
 
 .scroll-prompt {
   position: absolute;
-  bottom: 0;
-  right: 6rem;
+  font-size: 0.8rem;
+  bottom: 3rem;
+  right: 6%;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
 
   &:before {
+    border-style: solid;
+    border-width: 0.2em 0.2em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.7rem;
+    left: -1em;
+    position: relative;
+    vertical-align: top;
+    width: 0.7rem;
+    top: -0.10rem;
+	  transform: rotate(135deg);
+  }
+
+  &:after {
     content: "";
+    height: 8em;
+    width: 3px;
+    background-color: $deco-color;
+    position: absolute;
+    right: -1rem;
+  }
+}
+
+//Trash Panda Info Section//
+
+.trash-panda-section {
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: white;
+
+  p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    width: 50vw;
+  }
+}
+
+.learn-btn {
+  background-color: $base-color;
+  width: fit-content;
+
+  &:hover {
+    background-color: white;
+    color: $base-color;
+  }
+}
+
+.deco-circle {
+  background-color: $accent-color;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  z-index: -1;
+}
+
+//About Section//
+
+.about-section {
+  background-color: $base-color;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+
+  .about-info {
+    margin-top: 1rem;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+
+    blockquote {
+      margin-top: 3rem;
+      font-size: 2rem;
+
+      &:before, &:after {
+        content: "\"";
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .deco-circle-2 {
+    background-image: url("/assets/pale-blue-dot.png");
+    background-position: right;
+    background-size: cover;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+  }
+}
+
+.team-gallery {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  grid-template-rows: repeat(2, 250px);
+
+  div {
+    width: 80%;
+    height: 80%;
+    justify-self: center;
+    align-self: center;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      width: 100%;
+      height: 100%;
+      transform-origin: center center;
+      transition: all 100ms ease-in-out;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+//Footer//
+
+footer {
+  background-color: white;
+  display: flex;
+  padding-left: 15%;
+  align-items: center;
+
+  .logo {
+    height: 100px;
+    flex-grow: 1;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .socials-footer {
+    list-style: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 15%;
+
+    li {
+    margin: 1rem;
+
+      a {
+        text-decoration: none;
+        color: $base-color;
+        display: block;
+        padding: 0.8rem;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+    }
   }
 }
