@@ -21,14 +21,18 @@ h1 {
 }
 
 h2 {
+  color: white;
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.2rem;
 }
 
 section {
-  height: 100vh;
-  padding-left: 15%;
+  min-height: 100vh;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  padding: 0 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,8 +245,8 @@ header ul li a {
 .deco-circle {
   background-color: #d25e5e;
   border-radius: 50%;
-  height: 350px;
-  width: 350px;
+  height: 300px;
+  width: 300px;
   position: absolute;
   top: 25%;
   right: 10%;
@@ -261,9 +265,13 @@ header ul li a {
           justify-content: center;
 }
 
+.about-section p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
 .about-section .about-info {
   margin-top: 1rem;
-  width: 80%;
   position: relative;
   z-index: 1;
 }
@@ -278,48 +286,58 @@ header ul li a {
   font-size: 3rem;
 }
 
-.about-section .deco-circle-2 {
-  background-image: url("/assets/pale-blue-dot.png");
-  background-position: right;
-  background-size: cover;
-  border-radius: 50%;
-  width: 400px;
-  height: 400px;
-  position: absolute;
+.team-section {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .team-gallery {
   margin-top: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (250px)[2];
-      grid-template-columns: repeat(2, 250px);
-  -ms-grid-rows: (250px)[2];
-      grid-template-rows: repeat(2, 250px);
+  -ms-grid-columns: (175px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 175px);
+  grid-auto-rows: 175px;
+  grid-gap: 10px;
 }
 
-.team-gallery div {
-  width: 80%;
-  height: 80%;
+.team-gallery figure {
+  width: 100%;
+  height: 100%;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
-.team-gallery div:hover {
+.team-gallery figure figcaption {
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.team-gallery figure figcaption span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.team-gallery figure div {
   width: 100%;
   height: 100%;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  border: 2px solid white;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.team-gallery div img {
+.team-gallery figure div img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
